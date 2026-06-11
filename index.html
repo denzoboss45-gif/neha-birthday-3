@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Neha 🎂</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{background:linear-gradient(135deg,#ff6b9d,#ff8fab,#ffc2d1);color:white;text-align:center;overflow-x:hidden}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px}
+.hero h1{font-size:3rem}
+.btn{margin-top:25px;padding:15px 35px;border:none;border-radius:50px;background:white;color:#ff2d75;font-weight:bold;cursor:pointer}
+.hidden{display:none}
+.countdown,.message-box{width:90%;max-width:900px;margin:20px auto;background:rgba(255,255,255,.15);padding:25px;border-radius:20px}
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:20px}
+.photo-card{max-width:320px}
+.photo-card img{width:100%;height:380px;object-fit:cover;border-radius:20px}
+.photo-card p{margin-top:10px;background:rgba(255,255,255,.15);padding:10px;border-radius:12px}
+.footer{padding:40px;font-size:24px}
+</style>
+</head>
+<body>
+<section class="hero">
+<h1>🎂 Happy Birthday Neha 🎂</h1>
+<p>Neha ❤️ तुम्हारे लिए एक छोटा सा Birthday Surprise...</p>
+<button class="btn" onclick="openGift()">🎁 Open Surprise</button>
+</section>
+
+<div id="main" class="hidden">
+<div class="countdown">
+<h2>⏳ Countdown To 24 June 2026</h2>
+<div id="timer"></div>
+</div>
+
+<div class="message-box">
+<h2>🌺 Birthday Special Message 🌺</h2><br>
+ओ सनम ओ सनम..<br>
+हो गया है तेरा जन्म... 😁<br><br>
+तुझ जैसे को क्यूटी बुलाने में मुझे कैसी शर्म...<br><br>
+किये तुम्हारे माता-पिता ने बढ़िया से कर्म...<br><br>
+तुझ जैसे Chhotu Don को पैदा किया, Thank You बोलते हैं हम... 🙏🌺<br><br>
+आज बैठ कर आसमान में सितारे तू मत गिन-गिन...<br><br>
+किसी और Movie में मैं सपेरा... और तू मेरी नागिन... गिन-गिन... 🐍😆<br><br>
+It's Your जन्म दिन... 🎂🥳
+</div>
+
+<h2>📸 Beautiful Memories 📸</h2>
+<div class="gallery">
+<div class="photo-card">
+<img src="photo1.jpg">
+<p>😆 दुनिया में बहुत लोग हैं,<br>पर तेरे जैसे नमूने कम हैं...<br><br>🎂 Happy Birthday Chhotu Don 🎂</p>
+</div>
+<div class="photo-card">
+<img src="photo2.jpg">
+<p>😂 हँसती रहो, मुस्कुराती रहो,<br>और हमें ऐसे ही परेशान करती रहो... 🌺</p>
+</div>
+</div>
+
+<div class="footer">
+🎂 आज का दिन सिर्फ तुम्हारा है...<br><br>
+🍰 खूब केक खाओ... 🥳 खूब मस्ती करो...<br><br>
+😎 और जो लोग उम्र पूछें, उन्हें सीधे Ignore करो... 🤣<br><br>
+🎉 Happy Birthday Neha 🎉<br><br>
+— तुम्हारा Bhalu 🐻
+</div>
+</div>
+
+<audio id="music" loop><source src="music.mp3" type="audio/mpeg"></audio>
+<script>
+function openGift(){document.getElementById('main').classList.remove('hidden');document.getElementById('music').play();}
+const target=new Date("June 24, 2026 00:00:00").getTime();
+setInterval(()=>{
+let diff=target-new Date().getTime();
+if(diff<0){document.getElementById('timer').innerHTML="🎉 Happy Birthday Neha 🎂";return;}
+let d=Math.floor(diff/(1000*60*60*24));
+let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((diff%(1000*60*60))/(1000*60));
+let s=Math.floor((diff%(1000*60))/1000);
+document.getElementById('timer').innerHTML=`${d} Days ❤️ ${h} Hours ❤️ ${m} Minutes ❤️ ${s} Seconds`;
+},1000);
+</script>
+</body>
+</html>
